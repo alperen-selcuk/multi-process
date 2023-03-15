@@ -6,7 +6,9 @@ RUN apk update & apk upgrade
 
 RUN apk add supervisor
 
-COPY . .
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+COPY /app .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
