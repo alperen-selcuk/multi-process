@@ -17,4 +17,6 @@ EXPOSE 5002
 
 WORKDIR /etc/supervisor/conf.d
 
-ENTRYPOINT ["supervisord]
+COPY supervisord.conf .
+
+ENTRYPOINT ["supervisord"]
